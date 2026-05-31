@@ -1,8 +1,10 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/logo.svg">
-  <img alt="censtr" src="assets/logo.svg" width="800">
-</picture>
+```
+                          __         
+  ___  ___  ____   _____ / /_ _____
+ / __|/ _ \/ __ \ / ___// __// ___/
+/ /_ /  __/ / / /(__  )/ /_ / /    
+\___/\___/_/ /_//____/ \__//_/     
+```
 
 Tools for analysing whether Nostr clients are censoring users by comparing posts available on relays against what their caching layers return.
 
