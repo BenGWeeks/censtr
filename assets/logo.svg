@@ -1,10 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#9333ea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <text x="400" y="120" text-anchor="middle" font-family="monospace" font-size="120" font-weight="bold" fill="url(#grad)" letter-spacing="-2">censtr</text>
-  <text x="400" y="170" text-anchor="middle" font-family="monospace" font-size="22" fill="#888">nostr client censorship analysis</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 120">
+  <style>
+    text {
+      font-family: monospace;
+      font-size: 14px;
+      font-weight: bold;
+      fill: #9333ea;
+    }
+  </style>
+  <text x="10" y="20" xml:space="preserve"> ██████╗███████╗███╗   ██╗███████╗████████╗██████╗ </text>
+  <text x="10" y="36" xml:space="preserve">██╔════╝██╔════╝████╗  ██║██╔════╝╚══██╔══╝██╔══██╗</text>
+  <text x="10" y="52" xml:space="preserve">██║     █████╗  ██╔██╗ ██║███████╗   ██║   ██████╔╝</text>
+  <text x="10" y="68" xml:space="preserve">██║     ██╔══╝  ██║╚██╗██║╚════██║   ██║   ██╔══██╗</text>
+  <text x="10" y="84" xml:space="preserve">╚██████╗███████╗██║ ╚████║███████║   ██║   ██║  ██║</text>
+  <text x="10" y="100" xml:space="preserve"> ╚═════╝╚══════╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝</text>
 </svg>

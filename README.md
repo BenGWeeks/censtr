@@ -1,16 +1,20 @@
-```
-                          __         
-  ___  ___  ____   _____ / /_ _____
- / __|/ _ \/ __ \ / ___// __// ___/
-/ /_ /  __/ / / /(__  )/ /_ / /    
-\___/\___/_/ /_//____/ \__//_/     
-```
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo.svg">
+    <img alt="censtr" src="assets/logo.svg" width="100%">
+  </picture>
+</p>
+
+<p align="center">
+  <a href="https://github.com/BenGWeeks/censtr/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  </a>
+  <img src="https://img.shields.io/badge/node-18%2B-blue.svg" alt="Node">
+  <img src="https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg" alt="Platform">
+</p>
 
 Tools for analysing whether Nostr clients are censoring users by comparing posts available on relays against what their caching layers return.
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Node](https://img.shields.io/badge/node-18%2B-blue.svg)
-![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)
 
 Currently focused on [Primal](https://primal.net), which uses a caching server (`wss://cache2.primal.net/v1`) rather than connecting directly to relays. The Primal app queries this cache exclusively — users cannot add additional relays to work around any gaps.
 
