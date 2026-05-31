@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Primal Missing Posts by Month</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+<style>
+  body { font-family: sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+  h1 { text-align: center; }
+  .chart-container { max-width: 1200px; margin: 0 auto; background: #16213e; padding: 20px; border-radius: 12px; height: 500px; }
+  table { margin: 30px auto; border-collapse: collapse; }
+  th, td { padding: 6px 14px; border: 1px solid #333; text-align: right; }
+  th { background: #0f3460; }
+  td:first-child, th:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<h1>Posts Missing from Primal Cache (by month)</h1>
+<p style="text-align:center;color:#aaa;">Number of posts that exist on Primal-indexed relays but are absent from Primal's cache API.<br>
+Based on kind-1 text notes.</p>
+<div class="chart-container">
+<canvas id="chart"></canvas>
+</div>
+
+<div style="max-width:900px;margin:30px auto;padding:16px;background:#0f3460;border-radius:8px;font-size:14px;line-height:1.6;">
+<strong>Prior to chart range (2023):</strong>
+Jul 2023 — Filterlists + automatic spam detection added &bull;
+Aug 2023 — "Shadowban" controversy, can't-trend list exposed &bull;
+Sep 2023 — New moderation system launched (user controls, WoT trending, can't-trend list removed) &bull;
+Nov 2023 — TrustRank (PageRank-style Web of Trust) module added
+</div>
+
+<h2 style="text-align:center;margin-top:40px;">Raw Data (posts missing)</h2>
+<table>
+<tr><th>Month</th><th style="color:#2196F3">BenGWeeks</th><th style="color:#FF9800">semisol</th><th style="color:#f44336">fuckstr</th><th style="color:#9C27B0">ralf</th><th style="color:#4CAF50">jb55</th><th style="color:#00BCD4">jack</th><th style="color:#795548">fiatjaf</th></tr>
+<tr><td>2024-05</td><td>-</td><td>-</td><td>-</td><td>0</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>2024-06</td><td>-</td><td>-</td><td>-</td><td>1</td><td>13</td><td>-</td><td>2</td></tr>
+<tr><td>2024-07</td><td>-</td><td>-</td><td>-</td><td>0</td><td>2</td><td>-</td><td>-</td></tr>
+<tr><td>2024-08</td><td>-</td><td>-</td><td>-</td><td>0</td><td>-</td><td>-</td><td>3</td></tr>
+<tr><td>2024-09</td><td>-</td><td>-</td><td>-</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>2024-10</td><td>-</td><td>-</td><td>-</td><td>-</td><td>2</td><td>-</td><td>-</td></tr>
+<tr><td>2024-11</td><td>-</td><td>-</td><td>-</td><td>-</td><td>23</td><td>1</td><td>-</td></tr>
+<tr><td>2024-12</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>5</td></tr>
+<tr><td>2025-01</td><td>-</td><td>-</td><td>-</td><td>-</td><td>10</td><td>0</td><td>1</td></tr>
+<tr><td>2025-02</td><td>-</td><td>-</td><td>-</td><td>0</td><td>3</td><td>0</td><td>1</td></tr>
+<tr><td>2025-03</td><td>-</td><td>-</td><td>-</td><td>0</td><td>2</td><td>0</td><td>1</td></tr>
+<tr><td>2025-04</td><td>0</td><td>-</td><td>-</td><td>0</td><td>2</td><td>0</td><td>-</td></tr>
+<tr><td>2025-05</td><td>0</td><td>-</td><td>-</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>2025-06</td><td>-</td><td>18</td><td>-</td><td>0</td><td>2</td><td>0</td><td>2</td></tr>
+<tr><td>2025-07</td><td>0</td><td>-</td><td>-</td><td>-</td><td>8</td><td>0</td><td>0</td></tr>
+<tr><td>2025-08</td><td>0</td><td>27</td><td>-</td><td>-</td><td>4</td><td>0</td><td>0</td></tr>
+<tr><td>2025-09</td><td>0</td><td>28</td><td>-</td><td>0</td><td>575</td><td>0</td><td>0</td></tr>
+<tr><td>2025-10</td><td>0</td><td>9</td><td>500</td><td>0</td><td>295</td><td>0</td><td>0</td></tr>
+<tr><td>2025-11</td><td>-</td><td>2</td><td>-</td><td>0</td><td>-</td><td>0</td><td>0</td></tr>
+<tr><td>2025-12</td><td>0</td><td>0</td><td>-</td><td>0</td><td>-</td><td>0</td><td>0</td></tr>
+<tr><td>2026-01</td><td>1</td><td>0</td><td>-</td><td>0</td><td>-</td><td>0</td><td>0</td></tr>
+<tr><td>2026-02</td><td>0</td><td>0</td><td>1</td><td>1</td><td>-</td><td>-</td><td>0</td></tr>
+<tr><td>2026-03</td><td>0</td><td>0</td><td>95</td><td>0</td><td>0</td><td>-</td><td>2</td></tr>
+<tr><td>2026-04</td><td>0</td><td>0</td><td>79</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>2026-05</td><td>1</td><td>0</td><td>131</td><td>1</td><td>18</td><td>0</td><td>0</td></tr>
+</table>
+
+<script>
+const ctx = document.getElementById('chart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["2024-05","2024-06","2024-07","2024-08","2024-09","2024-10","2024-11","2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05"],
+    datasets: [{"label":"BenGWeeks","data":[null,null,null,null,null,null,null,null,null,null,null,0,0,null,0,0,0,0,null,0,1,0,0,0,1],"borderColor":"#2196F3","backgroundColor":"#2196F333","tension":0.3,"pointRadius":3,"borderWidth":2,"spanGaps":true},{"label":"semisol","data":[null,null,null,null,null,null,null,null,null,null,null,null,null,18,null,27,28,9,2,0,0,0,0,0,0],"borderColor":"#FF9800","backgroundColor":"#FF980033","tension":0.3,"pointRadius":3,"borderWidth":2,"spanGaps":true},{"label":"fuckstr","data":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,500,null,null,null,1,95,79,131],"borderColor":"#f44336","backgroundColor":"#f4433633","tension":0.3,"pointRadius":3,"borderWidth":2,"spanGaps":true},{"label":"ralf","data":[0,1,0,0,0,null,null,null,null,0,0,0,0,0,null,null,0,0,0,0,0,1,0,0,1],"borderColor":"#9C27B0","backgroundColor":"#9C27B033","tension":0.3,"pointRadius":3,"borderWidth":2,"spanGaps":true},{"label":"jb55","data":[null,13,2,null,1,2,23,null,10,3,2,2,1,2,8,4,575,295,null,null,null,null,0,0,18],"borderColor":"#4CAF50","backgroundColor":"#4CAF5033","tension":0.3,"pointRadius":3,"borderWidth":2,"spanGaps":true},{"label":"jack","data":[null,null,null,null,1,null,1,null,0,0,0,0,0,0,0,0,0,0,0,0,0,null,null,0,0],"borderColor":"#00BCD4","backgroundColor":"#00BCD433","tension":0.3,"pointRadius":3,"borderWidth":2,"spanGaps":true},{"label":"fiatjaf","data":[null,2,null,3,1,null,null,5,1,1,1,null,0,2,0,0,0,0,0,0,0,0,2,0,0],"borderColor":"#795548","backgroundColor":"#79554833","tension":0.3,"pointRadius":3,"borderWidth":2,"spanGaps":true}]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: '#eee', font: { size: 14 } } },
+      tooltip: { callbacks: { label: (ctx) => ctx.dataset.label + ': ' + ctx.parsed.y + ' posts missing' } },
+      annotation: {
+        annotations: {
+          cm_postgres: {
+            type: 'line',
+            xMin: '2024-09',
+            xMax: '2024-09',
+            borderColor: 'rgba(255,255,255,0.4)',
+            borderWidth: 1,
+            borderDash: [4, 4],
+            label: { display: true, content: 'Moderation to Postgres', position: 'end', color: '#aaa', font: { size: 10 }, backgroundColor: 'transparent', padding: 2 }
+          },
+          trustrank_maker: {
+            type: 'line',
+            xMin: '2024-11',
+            xMax: '2024-11',
+            borderColor: 'rgba(255,255,255,0.4)',
+            borderWidth: 1,
+            borderDash: [4, 4],
+            label: { display: true, content: 'TrustRank maker', position: 'end', color: '#aaa', font: { size: 10 }, backgroundColor: 'transparent', padding: 2, yAdjust: -15 }
+          },
+          cm_upgrade: {
+            type: 'line',
+            xMin: '2026-03',
+            xMax: '2026-03',
+            borderColor: 'rgba(255,255,255,0.4)',
+            borderWidth: 1,
+            borderDash: [4, 4],
+            label: { display: true, content: 'Major moderation upgrade', position: 'end', color: '#aaa', font: { size: 10 }, backgroundColor: 'transparent', padding: 2 }
+          }
+        }
+      }
+    },
+    scales: {
+      x: { ticks: { color: '#aaa' }, grid: { color: '#333' } },
+      y: {
+        ticks: { color: '#aaa' },
+        grid: { color: '#333' },
+        title: { display: true, text: 'Posts Missing from Primal', color: '#aaa' },
+        min: 0
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
